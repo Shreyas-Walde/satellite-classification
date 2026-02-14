@@ -1,0 +1,18 @@
+# Training data & model weights (too large for GitHub)
+data/
+
+*.zip
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+

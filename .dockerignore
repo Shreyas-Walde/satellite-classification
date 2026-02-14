@@ -1,0 +1,32 @@
+# Virtual environment
+.venv/
+__pycache__/
+
+# Training data (not needed for inference)
+data/
+notebooks/
+
+# Git
+.git/
+.gitignore
+
+# Archives
+*.zip
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+*.pyc
+*.pyo
+*.egg-info/
+
+# Misc
+README.md
+satellite_classifier.py
+EuroSAT.zip
+archive.zip
+uv.lock
+pyproject.toml
+.python-version
