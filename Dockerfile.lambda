@@ -1,0 +1,22 @@
+# ============================================
+# Satellite Image Classifier — AWS Lambda Image
+# ONNX-only (no PyTorch) for minimal size (~416 MB)
+# ============================================
+
+FROM public.ecr.aws/lambda/python:3.12
+
+# OpenCV runtime dependencies
+RUN dnf install -y libglvnd-glx glib2 && dnf clean all
+
+# Python dependencies (no torch, no uvicorn — Lambda doesn't need them)
+COPY requirements-lambda.txt .
+RUN pip install --no-cache-dir -r requirements-lambda.txt
+
+# Application code
+COPY main.py preprocessing.py ${LAMBDA_TASK_ROOT}/
+
+# ONNX model only (skip PyTorch .pth to save ~26 MB)
+COPY models/model.onnx ${LAMBDA_TASK_ROOT}/models/
+
+# Mangum handler: main.py defines  handler = Mangum(app)
+CMD ["main.handler"]

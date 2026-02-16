@@ -20,7 +20,7 @@ transform = transforms.Compose([
 
 # 3. Load data
 from torchvision.datasets import ImageFolder
-dataset = ImageFolder('satellite_images/', transform=transform)
+dataset = ImageFolder('data/', transform=transform)
 train_loader = DataLoader(dataset, batch_size=32, shuffle=True)
 
 # 4. Quick training (just 5 epochs for demo)

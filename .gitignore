@@ -1,6 +1,6 @@
 # Training data & model weights (too large for GitHub)
 data/
-
+scripts
 *.zip
 
 # Python
@@ -16,3 +16,4 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+implementation_plan.md.resolved
